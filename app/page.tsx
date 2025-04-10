@@ -1,4 +1,21 @@
-import { Github, Linkedin, Mail, MapPin, Code, Menu, ArrowRight, Download, ChevronRight } from "lucide-react"
+import { Badge } from "@/components/ui/badge"
+import {
+  Github,
+  Linkedin,
+  Mail,
+  MapPin,
+  Code,
+  Menu,
+  ArrowRight,
+  Download,
+  ChevronRight,
+  Bot,
+  AlertTriangle,
+  Shield,
+  Zap,
+  Cpu,
+  BarChart,
+} from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -26,11 +43,13 @@ import { AnimatedDeveloper } from "@/components/ui/animated-developer"
 import { AnimatedTechIcons } from "@/components/ui/animated-tech-icons"
 import { AnimatedCodeTyping } from "@/components/ui/animated-code-typing"
 import { AnimatedRocket } from "@/components/ui/animated-rocket"
-import { AnimatedCircuit } from "@/components/ui/animated-circuit"
+import { AnimatedAIBrain } from "@/components/ui/animated-ai-brain"
+import ScrollToSection from "@/components/scroll-to-section"
 
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
+      <ScrollToSection />
       <header className="border-b bg-background/70 backdrop-blur-md supports-[backdrop-filter]:bg-background/40">
         <div className="container flex h-16 items-center justify-between">
           <div className="font-bold text-gradient text-2xl">
@@ -50,49 +69,42 @@ export default function Home() {
                 <Link
                   href="#about"
                   className="text-base font-medium hover:text-primary px-2 py-1.5 rounded-md hover:bg-muted transition-colors"
-                  scroll={false}
                 >
                   About
                 </Link>
                 <Link
                   href="#education"
                   className="text-base font-medium hover:text-primary px-2 py-1.5 rounded-md hover:bg-muted transition-colors"
-                  scroll={false}
                 >
                   Education
                 </Link>
                 <Link
                   href="#experience"
                   className="text-base font-medium hover:text-primary px-2 py-1.5 rounded-md hover:bg-muted transition-colors"
-                  scroll={false}
                 >
                   Experience
                 </Link>
                 <Link
                   href="#projects"
                   className="text-base font-medium hover:text-primary px-2 py-1.5 rounded-md hover:bg-muted transition-colors"
-                  scroll={false}
                 >
                   Projects
                 </Link>
                 <Link
                   href="#achievements"
                   className="text-base font-medium hover:text-primary px-2 py-1.5 rounded-md hover:bg-muted transition-colors"
-                  scroll={false}
                 >
                   Achievements
                 </Link>
                 <Link
                   href="#skills"
                   className="text-base font-medium hover:text-primary px-2 py-1.5 rounded-md hover:bg-muted transition-colors"
-                  scroll={false}
                 >
                   Skills
                 </Link>
                 <Link
                   href="#contact"
                   className="text-base font-medium hover:text-primary px-2 py-1.5 rounded-md hover:bg-muted transition-colors"
-                  scroll={false}
                 >
                   Contact
                 </Link>
@@ -120,49 +132,42 @@ export default function Home() {
             <Link
               href="#about"
               className="text-sm font-medium px-3 py-2 rounded-md hover:bg-muted hover:text-primary transition-colors"
-              scroll={false}
             >
               About
             </Link>
             <Link
               href="#education"
               className="text-sm font-medium px-3 py-2 rounded-md hover:bg-muted hover:text-primary transition-colors"
-              scroll={false}
             >
               Education
             </Link>
             <Link
               href="#experience"
               className="text-sm font-medium px-3 py-2 rounded-md hover:bg-muted hover:text-primary transition-colors"
-              scroll={false}
             >
               Experience
             </Link>
             <Link
               href="#projects"
               className="text-sm font-medium px-3 py-2 rounded-md hover:bg-muted hover:text-primary transition-colors"
-              scroll={false}
             >
               Projects
             </Link>
             <Link
               href="#achievements"
               className="text-sm font-medium px-3 py-2 rounded-md hover:bg-muted hover:text-primary transition-colors"
-              scroll={false}
             >
               Achievements
             </Link>
             <Link
               href="#skills"
               className="text-sm font-medium px-3 py-2 rounded-md hover:bg-muted hover:text-primary transition-colors"
-              scroll={false}
             >
               Skills
             </Link>
             <Link
               href="#contact"
               className="text-sm font-medium px-3 py-2 rounded-md hover:bg-muted hover:text-primary transition-colors"
-              scroll={false}
             >
               Contact
             </Link>
@@ -590,6 +595,16 @@ export default function Home() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <ScrollReveal>
                 <ProjectCard
+                  title="OSSist - AI OS Diagnostics"
+                  description="An AI-powered agent that diagnoses OS-level problems, suggests solutions, and automates fixes using ML and MERN stack."
+                  image="/placeholder.svg?height=300&width=500"
+                  tags={["React", "MongoDB", "Express", "Node.js", "TensorFlow", "NLP"]}
+                  demoUrl="https://example.com/ossist-demo"
+                  codeUrl="https://github.com/algoplutus1708/ossist"
+                />
+              </ScrollReveal>
+              <ScrollReveal delay={200}>
+                <ProjectCard
                   title="Anubhav"
                   description="A platform for AITians to share interview experiences with 200+ articles from seniors at top companies."
                   image="/placeholder.svg?height=300&width=500"
@@ -598,7 +613,7 @@ export default function Home() {
                   codeUrl="https://github.com/algoplutus1708/anubhav"
                 />
               </ScrollReveal>
-              <ScrollReveal delay={200}>
+              <ScrollReveal delay={300}>
                 <ProjectCard
                   title="PathFinder Visualizer"
                   description="Interactive visualization of pathfinding algorithms (DFS, BFS, Dijkstra) with random maze generation and solver."
@@ -631,6 +646,141 @@ export default function Home() {
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </a>
               </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* OSSist Project Highlight Section */}
+        <section className="py-16 relative overflow-hidden">
+          <AnimatedBackground />
+          <div className="container relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              <ScrollReveal>
+                <div className="space-y-6">
+                  <div className="inline-flex items-center justify-center p-1 mb-2 rounded-full bg-primary/10 dark:bg-primary/20">
+                    <span className="px-3 py-1 text-sm font-medium">Featured Project</span>
+                  </div>
+                  <h2 className="text-3xl font-bold">
+                    <span className="text-gradient">OSSist</span> - AI OS Diagnostics
+                  </h2>
+                  <p className="text-muted-foreground">
+                    An AI-powered agent that diagnoses operating system problems and provides automated solutions. Built
+                    with ML algorithms and MERN stack for a seamless user experience.
+                  </p>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="flex items-center gap-3">
+                      <div className="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center">
+                        <Bot className="h-5 w-5 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-medium">AI Diagnostics</h3>
+                        <p className="text-sm text-muted-foreground">Trained on 50k+ system errors</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center">
+                        <Zap className="h-5 w-5 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-medium">Automatic Fixes</h3>
+                        <p className="text-sm text-muted-foreground">90% success rate for common issues</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center">
+                        <AlertTriangle className="h-5 w-5 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-medium">Predictive Alerts</h3>
+                        <p className="text-sm text-muted-foreground">Early warning system for issues</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center">
+                        <Shield className="h-5 w-5 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-medium">Security Scanning</h3>
+                        <p className="text-sm text-muted-foreground">Malware detection & removal</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="pt-4">
+                    <h3 className="font-medium mb-2">Key Technologies:</h3>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge name="React" />
+                      <Badge name="Express.js" />
+                      <Badge name="MongoDB" />
+                      <Badge name="Node.js" />
+                      <Badge name="TensorFlow" />
+                      <Badge name="Natural Language Processing" />
+                      <Badge name="System APIs" />
+                    </div>
+                  </div>
+
+                  <div className="flex gap-4 pt-2">
+                    <Button variant="outline" asChild className="rounded-full group">
+                      <a href="#" className="flex items-center gap-1">
+                        View Project
+                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      </a>
+                    </Button>
+                    <Button variant="outline" asChild className="rounded-full group">
+                      <a href="#" className="flex items-center gap-1">
+                        View Code
+                        <Github className="h-4 w-4 ml-1 transition-transform group-hover:rotate-12" />
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+              </ScrollReveal>
+
+              <ScrollReveal delay={200}>
+                <div className="relative h-full min-h-[400px] bg-gradient-to-br from-slate-900 to-slate-800 rounded-lg shadow-xl p-6 flex items-center justify-center overflow-hidden">
+                  <div className="absolute inset-0 opacity-20">
+                    <AnimatedParticles />
+                  </div>
+                  <div className="relative z-10 space-y-8 w-full max-w-md mx-auto">
+                    <div className="bg-slate-800/70 backdrop-blur-sm p-4 rounded-lg border border-slate-700">
+                      <div className="flex items-center mb-2">
+                        <Cpu className="h-5 w-5 text-primary mr-2" />
+                        <h3 className="font-medium text-white">System Diagnostic</h3>
+                      </div>
+                      <div className="space-y-2">
+                        <div className="flex justify-between items-center">
+                          <span className="text-sm text-slate-300">CPU Usage</span>
+                          <span className="text-sm text-primary">92%</span>
+                        </div>
+                        <div className="w-full bg-slate-700 h-2 rounded-full overflow-hidden">
+                          <div className="bg-red-500 h-full rounded-full" style={{ width: "92%" }}></div>
+                        </div>
+                        <div className="mt-4 text-sm text-orange-300">
+                          <AlertTriangle className="h-4 w-4 inline mr-1" />
+                          <span>High CPU usage detected</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="bg-slate-800/70 backdrop-blur-sm p-4 rounded-lg border border-slate-700">
+                      <div className="flex items-center mb-2">
+                        <BarChart className="h-5 w-5 text-primary mr-2" />
+                        <h3 className="font-medium text-white">AI Recommendation</h3>
+                      </div>
+                      <div className="space-y-2 text-sm text-slate-300">
+                        <p>Issue: Process "chrome.exe" using 75% CPU resources</p>
+                        <p>Recommendation: Close unused Chrome tabs or restart browser</p>
+                        <div className="flex justify-end mt-2">
+                          <Button variant="default" className="text-xs h-8 bg-primary/80 hover:bg-primary">
+                            Apply Fix Automatically
+                          </Button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </ScrollReveal>
             </div>
           </div>
         </section>
@@ -792,7 +942,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Circuit Animation Section */}
+        {/* AI Brain Section */}
         <section className="py-16 bg-muted/30 dark:bg-muted/10 relative overflow-hidden">
           <AnimatedBlob />
           <div className="container relative z-10">
@@ -800,11 +950,11 @@ export default function Home() {
               <ScrollReveal>
                 <div className="space-y-6">
                   <h2 className="text-3xl font-bold">
-                    <span className="text-gradient">Connected</span> Development
+                    <span className="text-gradient">AI & Machine Learning</span> Expertise
                   </h2>
                   <p className="text-muted-foreground">
-                    I approach software development as an interconnected system, where each component works in harmony
-                    with others to create a seamless user experience.
+                    Building intelligent systems that solve complex problems. I combine ML algorithms with robust
+                    software engineering to create smart applications that deliver real value.
                   </p>
                   <div className="space-y-4">
                     <div className="flex items-center gap-3">
@@ -812,8 +962,8 @@ export default function Home() {
                         <Code className="h-5 w-5 text-primary" />
                       </div>
                       <div>
-                        <h3 className="font-medium">System Architecture</h3>
-                        <p className="text-sm text-muted-foreground">Designing scalable, maintainable systems</p>
+                        <h3 className="font-medium">Natural Language Processing</h3>
+                        <p className="text-sm text-muted-foreground">Building systems that understand human language</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
@@ -821,8 +971,8 @@ export default function Home() {
                         <Code className="h-5 w-5 text-primary" />
                       </div>
                       <div>
-                        <h3 className="font-medium">API Integration</h3>
-                        <p className="text-sm text-muted-foreground">Connecting services and data sources</p>
+                        <h3 className="font-medium">Predictive Analytics</h3>
+                        <p className="text-sm text-muted-foreground">Forecasting trends and patterns in data</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
@@ -830,8 +980,8 @@ export default function Home() {
                         <Code className="h-5 w-5 text-primary" />
                       </div>
                       <div>
-                        <h3 className="font-medium">Microservices</h3>
-                        <p className="text-sm text-muted-foreground">Building modular, independent components</p>
+                        <h3 className="font-medium">Computer Vision</h3>
+                        <p className="text-sm text-muted-foreground">Creating systems that can see and interpret</p>
                       </div>
                     </div>
                   </div>
@@ -839,7 +989,7 @@ export default function Home() {
               </ScrollReveal>
               <ScrollReveal delay={200}>
                 <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-lg p-4 shadow-xl">
-                  <AnimatedCircuit />
+                  <AnimatedAIBrain />
                 </div>
               </ScrollReveal>
             </div>
