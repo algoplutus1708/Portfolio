@@ -45,14 +45,16 @@ import { AnimatedTechStack } from "@/components/ui/animated-tech-stack"
 import { AnimatedBackground } from "@/components/ui/animated-background"
 import { AnimatedTerminal } from "@/components/ui/animated-terminal"
 import { AnimatedDeveloper } from "@/components/ui/animated-developer"
-import { AnimatedTechIcons } from "@/components/ui/animated-tech-icons"
 import { AnimatedCodeTyping } from "@/components/ui/animated-code-typing"
 import { AnimatedRocket } from "@/components/ui/animated-rocket"
-import { Animated3DGeometry } from "@/components/ui/animated-3d-geometry"
 import { AnimatedFlowParticles } from "@/components/ui/animated-flow-particles"
 import { AnimatedDataViz } from "@/components/ui/animated-data-viz"
 import { AnimatedCreativeText } from "@/components/ui/animated-creative-text"
 import ScrollToSection from "@/components/scroll-to-section"
+import { AnimatedNeuralNetwork } from "@/components/ui/animated-neural-network"
+import { AnimatedHeroBackground } from "@/components/ui/animated-hero-background"
+import { AnimatedFloatingElements } from "@/components/ui/animated-floating-elements"
+import { AnimatedTechGrid } from "@/components/ui/animated-tech-grid"
 
 export default function Home() {
   return (
@@ -204,6 +206,10 @@ export default function Home() {
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative overflow-hidden py-24 md:py-32">
+          <div className="absolute inset-0 -z-10">
+            <AnimatedHeroBackground />
+          </div>
+          <AnimatedFloatingElements />
           <AnimatedParticles />
           <AnimatedBlob />
           <div className="container relative z-10">
@@ -611,6 +617,16 @@ export default function Home() {
                   codeUrl="https://github.com/algoplutus1708/ossist"
                 />
               </ScrollReveal>
+              <ScrollReveal delay={100}>
+                <ProjectCard
+                  title="Chanker - Real-time Chat Room"
+                  description="A feature-rich chat application with real-time messaging, user authentication, and room creation capabilities built with MERN stack and Socket.io."
+                  image="/placeholder.svg?height=300&width=500"
+                  tags={["React", "MongoDB", "Express", "Node.js", "Socket.io", "JWT"]}
+                  demoUrl="https://example.com/chanker-demo"
+                  codeUrl="https://github.com/algoplutus1708/chanker"
+                />
+              </ScrollReveal>
               <ScrollReveal delay={200}>
                 <ProjectCard
                   title="Anubhav"
@@ -917,7 +933,9 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <ScrollReveal>
-                <AnimatedTechIcons />
+                <div className="h-80 w-full">
+                  <AnimatedTechGrid />
+                </div>
               </ScrollReveal>
               <ScrollReveal delay={200}>
                 <div className="space-y-6">
@@ -1042,7 +1060,7 @@ export default function Home() {
               </ScrollReveal>
               <ScrollReveal delay={200}>
                 <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-lg p-4 shadow-xl">
-                  <Animated3DGeometry />
+                  <AnimatedNeuralNetwork />
                 </div>
               </ScrollReveal>
             </div>
