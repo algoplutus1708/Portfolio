@@ -15,6 +15,11 @@ import {
   Zap,
   Cpu,
   BarChart,
+  LineChart,
+  PieChart,
+  Lightbulb,
+  Puzzle,
+  Target,
 } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
@@ -43,7 +48,10 @@ import { AnimatedDeveloper } from "@/components/ui/animated-developer"
 import { AnimatedTechIcons } from "@/components/ui/animated-tech-icons"
 import { AnimatedCodeTyping } from "@/components/ui/animated-code-typing"
 import { AnimatedRocket } from "@/components/ui/animated-rocket"
-import { AnimatedAIBrain } from "@/components/ui/animated-ai-brain"
+import { Animated3DGeometry } from "@/components/ui/animated-3d-geometry"
+import { AnimatedFlowParticles } from "@/components/ui/animated-flow-particles"
+import { AnimatedDataViz } from "@/components/ui/animated-data-viz"
+import { AnimatedCreativeText } from "@/components/ui/animated-creative-text"
 import ScrollToSection from "@/components/scroll-to-section"
 
 export default function Home() {
@@ -942,6 +950,51 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Flow Particles Animation Section */}
+        <section className="py-16 relative overflow-hidden">
+          <div className="container relative z-10">
+            <div className="flex flex-col items-center text-center mb-12">
+              <div className="inline-flex items-center justify-center p-1 mb-4 rounded-full bg-primary/10 dark:bg-primary/20">
+                <span className="px-3 py-1 text-sm font-medium">Creative Coding</span>
+              </div>
+              <AnimatedText text="Bringing Ideas to Life" className="text-3xl md:text-4xl font-bold tracking-tight" />
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <ScrollReveal>
+                <div className="space-y-6">
+                  <h3 className="text-2xl font-bold">Interactive Experiences</h3>
+                  <p className="text-muted-foreground">
+                    I love creating dynamic, interactive experiences that engage users and bring designs to life. By
+                    combining creative coding with solid engineering principles, I build applications that are both
+                    beautiful and functional.
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="bg-primary/10 dark:bg-primary/20 p-4 rounded-lg">
+                      <h4 className="font-medium">Canvas Animations</h4>
+                      <p className="text-sm text-muted-foreground">Creating fluid, responsive visual effects</p>
+                    </div>
+                    <div className="bg-primary/10 dark:bg-primary/20 p-4 rounded-lg">
+                      <h4 className="font-medium">Interactive Data</h4>
+                      <p className="text-sm text-muted-foreground">Visualizing complex information</p>
+                    </div>
+                    <div className="bg-primary/10 dark:bg-primary/20 p-4 rounded-lg">
+                      <h4 className="font-medium">Particle Systems</h4>
+                      <p className="text-sm text-muted-foreground">Building dynamic motion graphics</p>
+                    </div>
+                    <div className="bg-primary/10 dark:bg-primary/20 p-4 rounded-lg">
+                      <h4 className="font-medium">WebGL & 3D</h4>
+                      <p className="text-sm text-muted-foreground">Creating immersive experiences</p>
+                    </div>
+                  </div>
+                </div>
+              </ScrollReveal>
+              <ScrollReveal delay={200}>
+                <AnimatedFlowParticles />
+              </ScrollReveal>
+            </div>
+          </div>
+        </section>
+
         {/* AI Brain Section */}
         <section className="py-16 bg-muted/30 dark:bg-muted/10 relative overflow-hidden">
           <AnimatedBlob />
@@ -989,7 +1042,120 @@ export default function Home() {
               </ScrollReveal>
               <ScrollReveal delay={200}>
                 <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-lg p-4 shadow-xl">
-                  <AnimatedAIBrain />
+                  <Animated3DGeometry />
+                </div>
+              </ScrollReveal>
+            </div>
+          </div>
+        </section>
+
+        {/* Data Visualization Section */}
+        <section className="py-16 bg-muted/30 dark:bg-muted/10 relative overflow-hidden">
+          <AnimatedWave />
+          <div className="container relative z-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <ScrollReveal>
+                <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-lg p-4 shadow-xl">
+                  <AnimatedDataViz />
+                </div>
+              </ScrollReveal>
+              <ScrollReveal delay={200}>
+                <div className="space-y-6">
+                  <h2 className="text-3xl font-bold">
+                    <span className="text-gradient">Data-Driven</span> Development
+                  </h2>
+                  <p className="text-muted-foreground">
+                    I believe in making informed decisions based on data. Whether it's analyzing user behavior,
+                    optimizing performance, or visualizing complex information, I use data to drive the development
+                    process.
+                  </p>
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-3">
+                      <div className="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center">
+                        <BarChart className="h-5 w-5 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-medium">Data Visualization</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Creating intuitive visual representations of data
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center">
+                        <LineChart className="h-5 w-5 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-medium">Performance Analytics</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Monitoring and optimizing application performance
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center">
+                        <PieChart className="h-5 w-5 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-medium">User Insights</h3>
+                        <p className="text-sm text-muted-foreground">Understanding user behavior and preferences</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </ScrollReveal>
+            </div>
+          </div>
+        </section>
+
+        {/* Creative Text Animation Section */}
+        <section className="py-16 relative overflow-hidden">
+          <AnimatedBackground />
+          <div className="container relative z-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <ScrollReveal>
+                <div className="space-y-6">
+                  <h2 className="text-3xl font-bold">
+                    <span className="text-gradient">Creative</span> Problem Solver
+                  </h2>
+                  <p className="text-muted-foreground">
+                    I approach each project as a unique challenge, combining technical expertise with creative thinking
+                    to develop innovative solutions that exceed expectations.
+                  </p>
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-3">
+                      <div className="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center">
+                        <Lightbulb className="h-5 w-5 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-medium">Innovative Thinking</h3>
+                        <p className="text-sm text-muted-foreground">Finding unique approaches to complex problems</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center">
+                        <Puzzle className="h-5 w-5 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-medium">Analytical Approach</h3>
+                        <p className="text-sm text-muted-foreground">Breaking down problems into manageable parts</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center">
+                        <Target className="h-5 w-5 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-medium">Goal-Oriented</h3>
+                        <p className="text-sm text-muted-foreground">Focusing on outcomes and user needs</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </ScrollReveal>
+              <ScrollReveal delay={200}>
+                <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-lg p-4 shadow-xl">
+                  <AnimatedCreativeText />
                 </div>
               </ScrollReveal>
             </div>
