@@ -55,6 +55,8 @@ import { AnimatedNeuralNetwork } from "@/components/ui/animated-neural-network"
 import { AnimatedHeroBackground } from "@/components/ui/animated-hero-background"
 import { AnimatedFloatingElements } from "@/components/ui/animated-floating-elements"
 import { AnimatedTechGrid } from "@/components/ui/animated-tech-grid"
+import { AnimatedCodeEditor } from "@/components/ui/animated-code-editor"
+import { Animated3DAboutCube } from "@/components/ui/animated-3d-about-cube"
 
 export default function Home() {
   return (
@@ -381,8 +383,8 @@ export default function Home() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="py-20 relative">
-          <AnimatedBackground />
+        <section id="about" className="py-20 relative overflow-hidden">
+          <AnimatedHeroBackground />
           <div className="container relative z-10">
             <div className="flex flex-col items-center text-center mb-12">
               <div className="inline-flex items-center justify-center p-1 mb-4 rounded-full bg-primary/10 dark:bg-primary/20">
@@ -390,30 +392,43 @@ export default function Home() {
               </div>
               <AnimatedText text="Get to know me" className="text-3xl md:text-4xl font-bold tracking-tight" />
             </div>
-            <div className="max-w-3xl mx-auto text-center space-y-6">
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <ScrollReveal>
-                <p className="text-lg leading-relaxed">
-                  I'm a Computer Engineering student at Army Institute Of Technology, Pune with a passion for web
-                  development, competitive programming, and open-source contributions. With expertise in both front-end
-                  and back-end technologies, I've worked on various projects ranging from web applications to algorithm
-                  visualizers.
-                </p>
+                <AnimatedCodeEditor className="shadow-xl shadow-primary/10" />
               </ScrollReveal>
-              <ScrollReveal delay={200}>
-                <p className="text-lg leading-relaxed">
-                  As Joint Secretary of AIT OSS, I've led development teams for multiple web portals and events. My
-                  approach to development focuses on creating clean, efficient, and maintainable code that delivers
-                  exceptional user experiences. I'm constantly learning and adapting to new technologies to stay at the
-                  forefront of software development.
-                </p>
-              </ScrollReveal>
-              <ScrollReveal delay={400}>
-                <p className="text-lg leading-relaxed">
-                  With a strong foundation in competitive programming (Specialist on Codeforces, 3-star on CodeChef), I
-                  enjoy solving complex algorithmic problems and have solved over 1000 problems across various
-                  platforms.
-                </p>
-              </ScrollReveal>
+
+              <div className="space-y-8">
+                <ScrollReveal delay={200}>
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-semibold">Who I Am</h3>
+                    <p className="text-muted-foreground">
+                      I'm a Computer Engineering student at Army Institute Of Technology, Pune with a passion for web
+                      development, competitive programming, and open-source contributions. With expertise in both
+                      front-end and back-end technologies, I've worked on various projects ranging from web applications
+                      to algorithm visualizers.
+                    </p>
+                  </div>
+                </ScrollReveal>
+
+                <ScrollReveal delay={300}>
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-semibold">What I Do</h3>
+                    <p className="text-muted-foreground">
+                      As Joint Secretary of AIT OSS, I've led development teams for multiple web portals and events. My
+                      approach to development focuses on creating clean, efficient, and maintainable code that delivers
+                      exceptional user experiences. I'm constantly learning and adapting to new technologies to stay at
+                      the forefront of software development.
+                    </p>
+                  </div>
+                </ScrollReveal>
+
+                <ScrollReveal delay={400}>
+                  <div className="flex justify-center">
+                    <Animated3DAboutCube />
+                  </div>
+                </ScrollReveal>
+              </div>
             </div>
           </div>
         </section>
@@ -611,7 +626,7 @@ export default function Home() {
                 <ProjectCard
                   title="OSSist - AI OS Diagnostics"
                   description="An AI-powered agent that diagnoses OS-level problems, suggests solutions, and automates fixes using ML and MERN stack."
-                  image="public/images/os.png"
+                  image="/placeholder.svg?height=300&width=500"
                   tags={["React", "MongoDB", "Express", "Node.js", "TensorFlow", "NLP"]}
                   demoUrl="https://example.com/ossist-demo"
                   codeUrl="https://github.com/algoplutus1708/ossist"
@@ -621,9 +636,9 @@ export default function Home() {
                 <ProjectCard
                   title="Chanker - Real-time Chat Room"
                   description="A feature-rich chat application with real-time messaging, user authentication, and room creation capabilities built with MERN stack and Socket.io."
-                  image="public/images/chanker.png"
+                  image="/placeholder.svg?height=300&width=500"
                   tags={["React", "MongoDB", "Express", "Node.js", "Socket.io", "JWT"]}
-                  demoUrl="https://github.com/algoplutus1708/Chanker-Online-Chatapp-Frontend"
+                  demoUrl="https://chanker-online-chatapp-frontend.vercel.app/"
                   codeUrl="https://github.com/algoplutus1708/Chanker-Online-Chatapp-Frontend"
                 />
               </ScrollReveal>
@@ -631,7 +646,7 @@ export default function Home() {
                 <ProjectCard
                   title="Anubhav"
                   description="A platform for AITians to share interview experiences with 200+ articles from seniors at top companies."
-                  image="public\images\anubhav.png"
+                  image="/placeholder.svg?height=300&width=500"
                   tags={["React", "Tailwind", "Express", "Multer"]}
                   demoUrl="https://anubhav.aitoss.club/"
                   codeUrl="https://github.com/aitoss/Anubhav-frontend-23"
@@ -641,7 +656,7 @@ export default function Home() {
                 <ProjectCard
                   title="PathFinder Visualizer"
                   description="Interactive visualization of pathfinding algorithms (DFS, BFS, Dijkstra) with random maze generation and solver."
-                  image="public/images/pathfinder.png"
+                  image="/placeholder.svg?height=300&width=500"
                   tags={["JavaScript", "Dijkstra", "A*", "DFS", "BFS"]}
                   demoUrl="https://path-finder-visualizer-gules.vercel.app/"
                   codeUrl="https://github.com/algoplutus1708/PathFinder-Visualizer"
@@ -651,7 +666,7 @@ export default function Home() {
                 <ProjectCard
                   title="INNERVE Web Portal"
                   description="Official web portal for INNERVE, a college-level technical event with 5k+ registrations nationwide."
-                  image="public/images/innerve.png"
+                  image="/placeholder.svg?height=300&width=500"
                   tags={["React", "Express.js", "Node.js"]}
                   demoUrl="https://innerve8-oss-club.vercel.app/"
                   codeUrl="https://github.com/aitoss/Innerve8"

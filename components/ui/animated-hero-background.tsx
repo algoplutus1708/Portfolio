@@ -81,7 +81,7 @@ export function AnimatedHeroBackground() {
       constructor() {
         this.x = Math.random() * canvas.width
         this.y = Math.random() * canvas.height
-        this.radius = Math.random() * 150 + 100
+        this.radius = Math.min(canvas.width, canvas.height) * (Math.random() * 0.3 + 0.2)
         this.color = this.getRandomColor()
         this.opacity = Math.random() * 0.05 + 0.02
         this.pulseSpeed = Math.random() * 0.0005 + 0.0002
@@ -120,15 +120,17 @@ export function AnimatedHeroBackground() {
       }
     }
 
-    // Create objects
+    // Create objects - adjust count based on screen size
     const stars: Star[] = []
     const gradients: Gradient[] = []
 
-    for (let i = 0; i < 150; i++) {
+    const starCount = Math.min(150, Math.max(50, Math.floor((canvas.width * canvas.height) / 10000)))
+    for (let i = 0; i < starCount; i++) {
       stars.push(new Star())
     }
 
-    for (let i = 0; i < 3; i++) {
+    const gradientCount = Math.min(5, Math.max(2, Math.floor(canvas.width / 300)))
+    for (let i = 0; i < gradientCount; i++) {
       gradients.push(new Gradient())
     }
 
@@ -163,5 +165,5 @@ export function AnimatedHeroBackground() {
     }
   }, [])
 
-  return <canvas ref={canvasRef} className="absolute inset-0 -z-10 opacity-70" />
+  return <canvas ref={canvasRef} className="absolute inset-0 -z-10 opacity-70 w-full h-full" />
 }
