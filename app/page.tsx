@@ -611,7 +611,7 @@ export default function Home() {
                 <ProjectCard
                   title="OSSist - AI OS Diagnostics"
                   description="An AI-powered agent that diagnoses OS-level problems, suggests solutions, and automates fixes using ML and MERN stack."
-                  image="../public/images/os.png"
+                  image="public/images/os.png"
                   tags={["React", "MongoDB", "Express", "Node.js", "TensorFlow", "NLP"]}
                   demoUrl="https://example.com/ossist-demo"
                   codeUrl="https://github.com/algoplutus1708/ossist"
@@ -621,7 +621,7 @@ export default function Home() {
                 <ProjectCard
                   title="Chanker - Real-time Chat Room"
                   description="A feature-rich chat application with real-time messaging, user authentication, and room creation capabilities built with MERN stack and Socket.io."
-                  image="../public/images/chanker.png"
+                  image="public/images/chanker.png"
                   tags={["React", "MongoDB", "Express", "Node.js", "Socket.io", "JWT"]}
                   demoUrl="https://github.com/algoplutus1708/Chanker-Online-Chatapp-Frontend"
                   codeUrl="https://github.com/algoplutus1708/Chanker-Online-Chatapp-Frontend"
@@ -631,7 +631,7 @@ export default function Home() {
                 <ProjectCard
                   title="Anubhav"
                   description="A platform for AITians to share interview experiences with 200+ articles from seniors at top companies."
-                  image="../public/images/anubhav.png"
+                  image="public\images\anubhav.png"
                   tags={["React", "Tailwind", "Express", "Multer"]}
                   demoUrl="https://anubhav.aitoss.club/"
                   codeUrl="https://github.com/aitoss/Anubhav-frontend-23"
@@ -641,7 +641,7 @@ export default function Home() {
                 <ProjectCard
                   title="PathFinder Visualizer"
                   description="Interactive visualization of pathfinding algorithms (DFS, BFS, Dijkstra) with random maze generation and solver."
-                  image="../public/images/pathfinder.png"
+                  image="public/images/pathfinder.png"
                   tags={["JavaScript", "Dijkstra", "A*", "DFS", "BFS"]}
                   demoUrl="https://path-finder-visualizer-gules.vercel.app/"
                   codeUrl="https://github.com/algoplutus1708/PathFinder-Visualizer"
@@ -651,7 +651,7 @@ export default function Home() {
                 <ProjectCard
                   title="INNERVE Web Portal"
                   description="Official web portal for INNERVE, a college-level technical event with 5k+ registrations nationwide."
-                  image="../public/images/innerve.png"
+                  image="public/images/innerve.png"
                   tags={["React", "Express.js", "Node.js"]}
                   demoUrl="https://innerve8-oss-club.vercel.app/"
                   codeUrl="https://github.com/aitoss/Innerve8"
