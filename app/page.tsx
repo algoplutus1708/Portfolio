@@ -1197,7 +1197,6 @@ export default function Home() {
 
         {/* Contact Section */}
         <section id="contact" className="py-20 relative">
-          <AnimatedRocket />
           <AnimatedParticles />
           <div className="container relative z-10">
             <div className="flex flex-col items-center text-center mb-12">
